@@ -1,4 +1,4 @@
-# # (NMT) Agent for Low‑Resource Languages
+# (NMT) Agent for Low‑Resource Languages
 
 <p align="center">
   <img alt="NMT" src="https://img.shields.io/badge/NMT-Low%20Resource-blue" />
