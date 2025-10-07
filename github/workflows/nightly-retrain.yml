@@ -1,0 +1,13 @@
+name: Nightly Retrain
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install transformers datasets torch sqlalchemy psycopg2-binary
+      - run: python scripts/fine_tune_multilingual.py

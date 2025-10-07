@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: nmt-backend:dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./nmt.db
+      CORS_ORIGINS: http://localhost:5173
+      JWT_SECRET: devsecret-change-me
+      JWT_ALG: HS256
+    volumes:
+      - ./backend/app:/app/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
