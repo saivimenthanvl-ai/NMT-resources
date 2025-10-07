@@ -1,5 +1,3 @@
-👇
-
 🌐 Neural Machine Translation (NMT) Agent for Low-Resource Languages
 
 End-to-end AI translation pipeline leveraging transformer models, data augmentation, and scalable DevOps — purpose-built to tackle the challenges of low-resource language translation.
