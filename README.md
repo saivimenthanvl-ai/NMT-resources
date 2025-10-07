@@ -1,73 +1,114 @@
-# React + TypeScript + Vite
+👇
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 Neural Machine Translation (NMT) Agent for Low-Resource Languages
 
-Currently, two official plugins are available:
+End-to-end AI translation pipeline leveraging transformer models, data augmentation, and scalable DevOps — purpose-built to tackle the challenges of low-resource language translation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🧭 Overview
 
-## React Compiler
+Many languages lack high-quality parallel corpora, making accurate translation a persistent challenge.
+This project implements a modular Neural Machine Translation (NMT) agent that:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📊 Builds & augments datasets from parallel, monolingual, and crowdsourced sources.
 
-## Expanding the ESLint configuration
+🧠 Fine-tunes state-of-the-art transformer models (MarianMT, mBART, M2M-100) with transfer learning.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🛠️ Deploys a robust backend API for real-time translation, user feedback, and continual learning.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🚀 Uses modern DevOps for containerized, automated retraining and scalable inference.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🏗️ System Architecture
+flowchart TD
+    A[Data Sources<br>(OPUS, JW300, Common Crawl)] --> B[Preprocessing<br>Tokenization + BPE]
+    B --> C[Data Augmentation<br>Back-Translation + Synthetic Data]
+    C --> D[Model Fine-Tuning<br>mBART / MarianMT / mT5]
+    D --> E[FastAPI / Express Backend]
+    E --> F[PostgreSQL / MongoDB<br>User Feedback + Pairs]
+    E --> G[REST API Consumers<br>Web / Mobile / CLI]
+    D --> H[CI/CD + Docker<br>Continuous Retraining]
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🧰 Tech Stack
+Layer	Technologies
+Backend	FastAPI (Python) or Express.js (Node.js)
+Database	PostgreSQL / MongoDB
+AI Models	MarianMT, mBART, M2M-100, mT5 using PyTorch / TensorFlow + Hugging Face Transformers
+Data Aug.	Back-translation, SentencePiece / BPE subword encoding, noise filtering
+DevOps	Docker, GitHub Actions / Jenkins for CI/CD, auto model retraining pipelines
+📂 Implementation Steps
+1️⃣ Data Collection & Preprocessing
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Parallel data: OPUS, JW300, CCAligned
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Monolingual data: Common Crawl, news websites, community corpora
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Crowdsourced data: Human translations & feedback
+
+Preprocessing:
+
+Text cleaning & normalization
+
+Subword encoding (BPE / SentencePiece)
+
+Synthetic sample generation via back-translation
+
+2️⃣ Model Development
+
+Model selection: MarianMT, mBART, mT5, M2M-100
+
+Transfer learning: Use high-resource language pairs to bootstrap low-resource models
+
+Fine-tuning: Domain-specific corpora + user feedback loops
+
+Zero/Few-shot: Explore unsupervised NMT & meta-learning for scarce datasets
+
+3️⃣ Backend & API
+
+REST API for translation, feedback submission, and batch uploads
+
+Caching + batching for latency optimization
+
+Secure endpoints with JWT or API keys
+
+4️⃣ DevOps & Deployment
+
+Containerized training + inference environments
+
+CI/CD pipelines for automated retraining on new data
+
+Horizontal scaling for production use
+
+🧪 Future Enhancements
+
+✅ Real-time translation quality estimation (COMET / BLEU)
+
+🌍 Multilingual UI with React or Next.js
+
+🧬 Incorporate active learning loops to prioritize valuable user corrections
+
+🦾 Low-latency inference with ONNX / TensorRT optimization
+
+🚀 Quick Start
+# repo
+cd nmt-agent-low-resource
+
+# Build Docker image
+docker compose build
+
+# Start backend
+docker compose up
+
+
+Once running, access the translation API at:
+👉 http://localhost:8000/translate (FastAPI)
+or
+👉 http://localhost:3000/api/translate (Express)
+
+🧑‍💻 Contributors
+
+Sai Vimenthan V L – AI/ML Engineer & Researcher
+🌐 GitHub
+ • 💼 LinkedIn
+
+📜 License
+
+MIT License — Feel free to fork, extend, and contribute.
