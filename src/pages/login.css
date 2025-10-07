@@ -1,0 +1,105 @@
+/* Full-screen gradient background */
+.auth-bg{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#3a7bd5 0%, #00d2ff 30%, #8a4fff 70%, #ff4fd8 100%);
+  background-attachment: fixed;
+  padding: 24px;
+  color:#222;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* Card */
+.auth-card{
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.2);
+  padding: 32px 32px 28px;
+}
+
+/* Title */
+.auth-title{
+  text-align:center;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 6px 0 18px;
+}
+
+/* Form */
+.auth-form{ display:flex; flex-direction:column; gap:12px; }
+
+.auth-label{
+  font-size:12px; color:#7a7a7a; letter-spacing:.2px;
+}
+
+.auth-input-wrap{
+  position: relative;
+  display:flex; align-items:center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.auth-ico{ font-size:14px; opacity:.6; margin-right:8px; }
+
+.auth-input{
+  flex:1;
+  border:none; outline:none;
+  padding: 10px 8px 10px 0;
+  font-size:14px;
+  background:transparent;
+}
+
+.auth-row{
+  display:flex; justify-content:flex-end; margin-top:4px;
+}
+
+.auth-link{
+  text-decoration:none; color:#7a7a7a; font-size:12px;
+}
+.auth-link:hover{ color:#111; }
+
+/* Error */
+.auth-error{
+  background:#ffe8e8; color:#b00020; border:1px solid #ffc7c7;
+  padding:8px 10px; border-radius:8px; font-size:12px;
+}
+
+/* Button (gradient pill) */
+.auth-btn{
+  margin-top: 6px;
+  width:100%; border:none; cursor:pointer;
+  padding: 12px 14px;
+  color:#fff; font-weight:700; letter-spacing:.6px;
+  border-radius:999px;
+  background: linear-gradient(90deg,#3ad5c6 0%, #9b4dff 100%);
+  box-shadow: 0 8px 18px rgba(155,77,255,.35);
+  transition: transform .08s ease;
+}
+.auth-btn:hover{ transform: translateY(-1px); }
+.auth-btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+/* Divider */
+.auth-divider{
+  text-align:center; color:#8e8e8e; font-size:12px; margin: 18px 0 10px;
+}
+
+/* Social buttons */
+.auth-social{ display:flex; gap:12px; justify-content:center; margin-bottom:8px; }
+.auth-social-btn{
+  width:40px; height:40px; border-radius:50%;
+  border:none; color:#fff; font-weight:800; cursor:pointer;
+  box-shadow: 0 10px 16px rgba(0,0,0,.15);
+}
+.auth-social-btn.fb{ background:#3b5998; }
+.auth-social-btn.tw{ background:#1da1f2; }
+.auth-social-btn.gg{ background:#db4437; }
+
+/* Sign up link */
+.auth-signup{ text-align:center; margin-top:6px; }
+.auth-link-strong{
+  text-decoration:none; color:#333; font-weight:800; letter-spacing:.6px;
+}
+.auth-link-strong:hover{ color:#000; }

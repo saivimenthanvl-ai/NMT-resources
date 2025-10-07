@@ -1,0 +1,129 @@
+/* Page shell */
+.auth-shell{
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  background:#0f111a;                 /* dark backdrop (works with your app) */
+  padding:24px;
+}
+
+/* Card */
+.auth-card{
+  width:100%;
+  max-width:480px;
+  background:#ffffff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.25);
+}
+
+/* Title */
+.auth-title{
+  margin:4px 0 18px;
+  text-align:center;
+  font-size:38px;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+/* Tabs */
+.auth-tabs{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  background:#f2f3f5;
+  border:1px solid #e7e7ea;
+  border-radius:16px;
+  padding:4px;
+  margin-bottom:18px;
+}
+.auth-tab{
+  position:relative;
+  text-align:center;
+  z-index:2;
+  padding:12px 8px;
+  color:#111;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:600;
+}
+.auth-tab.active{ color:#fff; }
+.auth-tab-slider{
+  position:absolute;
+  top:4px; left:4px;
+  width:calc(50% - 8px);
+  height:calc(100% - 8px);
+  border-radius:12px;
+  background: linear-gradient(90deg,#0b59cf,#0670f3);
+  box-shadow: 0 10px 18px rgba(6,112,243,.35);
+  transition:left .25s ease;
+  z-index:1;
+}
+
+/* Form */
+.auth-form{ display:flex; flex-direction:column; gap:16px; }
+
+.field input{
+  width:100%;
+  height:52px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid #e6e6eb;
+  background:#fff;
+  font-size:16px;
+  box-sizing:border-box;
+  transition: border-color .2s, box-shadow .2s;
+}
+.field input:focus{
+  border-color:#0b59cf;
+  box-shadow: 0 0 0 3px rgba(11,89,207,.12);
+  outline:none;
+}
+
+/* Password with toggle */
+.field-password{
+  position:relative;
+}
+.field-password .ghost{
+  position:absolute;
+  right:8px; top:50%;
+  transform: translateY(-50%);
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  font-size:18px;
+  opacity:.7;
+}
+
+/* Links */
+.row-right{ display:flex; justify-content:flex-end; }
+.muted{ color:#4a79ff; text-decoration:none; font-size:14px; }
+.muted:hover{ text-decoration:underline; }
+.link-strong{ color:#1e40af; text-decoration:none; font-weight:700; }
+.link-strong:hover{ text-decoration:underline; }
+
+/* CTA button */
+.btn-grad{
+  height:54px;
+  border:none;
+  color:#fff;
+  border-radius:16px;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.4px;
+  cursor:pointer;
+  background: linear-gradient(90deg,#0b59cf,#0a66dc);
+  box-shadow: 0 12px 22px rgba(11,89,207,.35);
+  transition: transform .06s ease, box-shadow .2s ease, opacity .2s;
+}
+.btn-grad:hover{ transform: translateY(-1px); }
+.btn-grad:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+.below{ text-align:center; margin-top:4px; font-size:15px; color:#222; }
+
+/* Error */
+.error{
+  background:#ffe8e8; color:#b00020; border:1px solid #ffc7c7;
+  padding:10px 12px; border-radius:10px; font-size:14px;
+}
