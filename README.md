@@ -26,9 +26,9 @@ flowchart TD
     D --> H[CI/CD + Docker<br>Continuous Retraining]
 
 🧰 Tech Stack
-Layer	Technologies
-Backend	FastAPI (Python) or Express.js (Node.js)
-Database	PostgreSQL / MongoDB
+Layer	      Technologies
+Backend	      FastAPI (Python) or Express.js (Node.js)
+Database	  PostgreSQL / MongoDB
 AI Models	MarianMT, mBART, M2M-100, mT5 using PyTorch / TensorFlow + Hugging Face Transformers
 Data Aug.	Back-translation, SentencePiece / BPE subword encoding, noise filtering
 DevOps	Docker, GitHub Actions / Jenkins for CI/CD, auto model retraining pipelines
